@@ -20,18 +20,18 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
 
-	
+
 	@Autowired
 	private DataSource myDataSource;
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-	
+
 		//jdbc authentication
-		
+
 		auth.jdbcAuthentication().dataSource(myDataSource);
-	
+
 	}
 
 	@Override
@@ -42,6 +42,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/admin/**").hasAnyRole("ADMIN")
 				.antMatchers("/result/**").hasAnyRole("TEACHER")
 			.and()
+                .csrf()
+                    .ignoringAntMatchers("/h2/**")
+            .and()
 			.formLogin()
 				.loginPage("/loginPage")
 				.loginProcessingUrl("/authenticateTheUser")
@@ -51,24 +54,24 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
 				.permitAll()
 			.and()
 				.exceptionHandling().accessDeniedPage("/access-denied");
-	
+
 	}
-	
+
 	@Bean
 	public UserDetailsManager userDetailsManager()
 	{
-		
+
 		JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
-		
+
 		jdbcUserDetailsManager.setDataSource(myDataSource);
-		
+
 		return jdbcUserDetailsManager;
 	}
-	
-	
 
-	
-	
-	
+
+
+
+
+
 
 }
