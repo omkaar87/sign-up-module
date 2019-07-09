@@ -12,7 +12,7 @@
 
 .panel-info>.panel-heading {
     color: #fff;
-	background-color: transparent; 
+	background-color: transparent;
 }
 
 .panel {
@@ -39,13 +39,13 @@ body{
 
 
 
-</style>		 
+</style>
 
 </head>
 <body>
 
 	<div>
-		
+
 		<c:if test="${successMessage != null}">
 			<div class="alert alert-success col-xs-offset-1 col-xs-5">
 				${successMessage}
@@ -57,14 +57,14 @@ body{
 				Enter your email address and we'll send you a link to rest your password.
 			</div>
 		</c:if>
-		
-		
+
+
 		<div id="loginbox" style="margin-top: 160px;"
 			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
-			
-			
-									
-			
+
+
+
+
 			<div class="panel panel-info">
 
 				<div class="panel-heading">
@@ -75,27 +75,28 @@ body{
 
 					<!-- Login Form -->
 			<form action="${pageContext.request.contextPath}/processForgotPassword" method="post">
-	
+
 						<!-- User name -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-							
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
 							<input type="text" name="email" placeholder="Email" class="form-control">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						</div>
 
 						<!-- Login/Submit Button -->
-						<div style="margin-top: 10px" class="form-group">						
+						<div style="margin-top: 10px" class="form-group">
 							<div class="col-sm-12 controls">
 								<button type="submit" class="btn btn-success">Submit</button>
+                                <a type="button" href="${pageContext.request.contextPath}/loginPage" class="btn btn-danger">Cancel</a>
 							</div>
-							
+
 						</div>
 
 					</form>
 
 				</div>
-				
+
 
 			</div>
 
@@ -107,6 +108,6 @@ body{
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+
 </body>
 </html>

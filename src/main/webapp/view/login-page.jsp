@@ -13,7 +13,7 @@
 
 .panel-info>.panel-heading {
     color: #fff;
-	background-color: transparent; 
+	background-color: transparent;
 }
 
 
@@ -28,7 +28,7 @@ body{
 	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .forgot{
-	position: absolute;
+	position: fixed;
     margin-left: 52px;
     margin-top: 9px;
 }
@@ -40,17 +40,17 @@ body{
 }
 
 
-</style>		 
+</style>
 </head>
 <body>
 
 
 
 	<div>
-		
+
 		<div id="loginbox" style="margin-top: 160px;margin-bottom: 50px;"
 			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
-			
+
 			<div class="panel panel-info">
 
 				<div class="panel-heading">
@@ -60,61 +60,61 @@ body{
 				<div style="padding-top: 30px" class="panel-body">
 
 					<!-- Login Form -->
-					<form:form action="${pageContext.request.contextPath}/authenticateTheUser" 
+					<form:form action="${pageContext.request.contextPath}/authenticateTheUser"
 							   method="POST" class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->
 					    <div class="form-group">
 					        <div class="col-xs-15">
 					            <div>
-										
+
 								<!-- Check for login error -->
-	
+
 								<c:if test="${param.error != null}">
 									<div class="alert alert-danger col-xs-offset-1 col-xs-10">
 										Invalid username and password.
 									</div>
 								</c:if>
-																	
+
 								<c:if test="${param.logout != null}">
 										<div class="alert alert-success col-xs-offset-1 col-xs-10">
 											You have been logged out.
 										</div>
 								</c:if>
-								
+
 								<c:if test="${status != null}">
 										<div class="alert alert-success col-xs-offset-1 col-xs-10">
 											${status}
 										</div>
 								</c:if>
-								
+
 								<c:if test="${brokenLink != null}">
 										<div class="alert alert-danger col-xs-offset-1 col-xs-10">
 											${brokenLink}
 										</div>
 								</c:if>
-							
+
 					            </div>
 					        </div>
 					    </div>
 
 						<!-- User name -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-							
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
 							<input type="text" name="username" placeholder="username" class="form-control">
 						</div>
 
 						<!-- Password -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
-							
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
 							<input type="password" name="password" placeholder="password" class="form-control" >
 						</div>
 					</div>
 						<!-- Login/Submit Button -->
 						<div class="footer">
-							<div style="margin-top: 10px" class="form-group">						
+							<div style="margin-top: 10px" class="form-group">
 							<div class="col-sm-12 controls">
 								<button type="submit" class="btn btn-success">Login</button>
 								<a href="${pageContext.request.contextPath}/register/showRegistrationForm"
@@ -123,17 +123,17 @@ body{
 								 </a>
 								 <a href="${pageContext.request.contextPath}/forgot" class="forgot">Forget Password?</a>
 							</div>
-							
+
 							</div>
-					
+
 						</div>
-				
-						
+
+
 
 					</form:form>
 
-				
-				
+
+
 
 			</div>
 
