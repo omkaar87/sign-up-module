@@ -93,9 +93,11 @@ public class RegistrationController {
 		
 		//prepend the encoding algorithm id
 		encodedPassword = "{bcrypt}" + encodedPassword;
+
+        System.out.print("Role :: "+theUser.getRole());
 		
 		//give user default role of "student"
-		List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList("ROLE_STUDENT");
+		List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(theUser.getRole());
 		
 		//create user details object
 		org.springframework.security.core.userdetails.User tempUser =

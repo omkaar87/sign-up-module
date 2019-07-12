@@ -8,7 +8,7 @@ public class LoginController {
 
 	
 	@GetMapping("/loginPage")
-	public String shoMyLoginPage()
+	public String showMyLoginPage()
 	{
 		return "login-page";
 	}
@@ -32,5 +32,12 @@ public class LoginController {
 	public String access()
 	{
 		return "access-denied";
+	}
+
+    //admin
+	@GetMapping("/admin/")
+	public String showAdmin()
+	{
+		return "admin";
 	}
 }

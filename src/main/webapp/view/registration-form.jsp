@@ -83,6 +83,17 @@ body{
 							<form:password path="password" placeholder="password" class="form-control" />
 						</div>
 
+                        <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+
+							<form:select class="form-control" path="role">
+                                <option>Select</option>
+                                <form:option value="ROLE_ADMIN">Admin</form:option>
+                                <form:option value="ROLE_STUDENT">Student</form:option>
+                                <form:option value="ROLE_TEACHER">Teacher</form:option>
+                            </form:select>
+						</div>
+
 						<!-- Register Button -->
 						<div style="margin-top: 10px" class="form-group">
 							<div class="col-sm-6 controls">
