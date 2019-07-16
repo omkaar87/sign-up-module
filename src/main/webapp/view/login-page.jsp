@@ -61,7 +61,7 @@ body{
 
 					<!-- Login Form -->
 					<form:form action="${pageContext.request.contextPath}/authenticateTheUser"
-							   method="POST" class="form-horizontal">
+							    method="POST" class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->
 					    <div class="form-group">
