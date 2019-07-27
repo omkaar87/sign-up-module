@@ -47,4 +47,10 @@ public class LoginController {
 	{
 		return "admin";
 	}
+
+    @GetMapping("/index")
+	public String showHomePage()
+	{
+		return "index";
+	}
 }

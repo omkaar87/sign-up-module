@@ -13,18 +13,18 @@
 <body>
 	<h2>Welcome to the Spring Security App</h2>
 	<hr>
-	
+
 	<!-- Display username and role -->
 	<p>
-		
-		User : <security:authentication property="principal.username"/> 
-	
+
+		User : <security:authentication property="principal.username"/>
+
 		<br><br>
-		
+
 		Roles : <security:authentication property="principal.authorities"/>
-	
+
 	  </p>
-	
+
 	<security:authorize access="hasRole('TEACHER')">
 		<!-- Add link to point to/leaders.. this is for the managers -->
 		<p>
@@ -33,21 +33,21 @@
 		</p>
 	</security:authorize>
 	<hr>
-	
+
 	<security:authorize access="hasRole('ADMIN')">
 		<!-- Add link to point to/systems.. this is for the Admins -->
 		<p>
-			<a href="${pageContext.request.contextPath}/systems">IT System Meeting</a>
+			<a href="${pageContext.request.contextPath}/admin">IT System Meeting</a>
 			(Only for Admin peeps)
 		</p>
 	</security:authorize>
-	
-	
-	
-	
+
+
+
+
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout"/>
 	</form:form>
-	
+
 </body>
 </html>

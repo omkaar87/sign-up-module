@@ -12,6 +12,6 @@
 <hr>
 <p>Access Denied You are nor authorized to access this resource</p>
 <hr>
-<a href="${pageContext.request.contextPath }/">Back to HomePage</a>
+<a href="${pageContext.request.contextPath }/index">Back to HomePage</a>
 </body>
 </html>

@@ -11,6 +11,6 @@
 <hr>
 <p>This page only visible for Admin.</p>
 <hr>
-<a href="/">Back to Home</a>
+<a href="/index">Back to Home</a>
 </body>
 </html>

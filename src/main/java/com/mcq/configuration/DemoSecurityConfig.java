@@ -43,7 +43,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 				.antMatchers("/").hasAnyRole("STUDENT")
 				.antMatchers("/admin/**").hasAnyRole("ADMIN")
-				.antMatchers("/result/**").hasAnyRole("TEACHER")
+				.antMatchers("/leaders/**").hasAnyRole("TEACHER")
 			.and()
                 .csrf()
                     .ignoringAntMatchers("/h2/**")

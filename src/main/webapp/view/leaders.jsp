@@ -12,6 +12,6 @@
 <hr>
 <p> Secret information for Teachers... blah blah blah!</p>
 <hr>
-<a href="${pageContext.request.contextPath }/">Back to HomePage</a>
+<a href="${pageContext.request.contextPath }/index">Back to HomePage</a>
 </body>
 </html>
